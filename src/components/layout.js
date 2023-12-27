@@ -1,50 +1,31 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/how-to/querying-data/use-static-query/
- */
-
 import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-
-import Header from "./header"
-import "./layout.css"
+import { StaticImage } from "gatsby-plugin-image"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: `var(--size-content)`,
-          padding: `var(--size-gutter)`,
-        }}
-      >
-        <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `var(--space-5)`,
-            fontSize: `var(--font-sm)`,
-          }}
-        >
-          © {new Date().getFullYear()} &middot; Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
+    <div className="flex flex-col min-h-screen items-center justify-center">
+      <header className="my-6 flex items-center justify-center">
+        <StaticImage
+          src="../images/photo.png"
+          width={64}
+          quality={95}
+          formats={["png", "webp", "avif"]}
+          className="rounded-full mr-4"
+          alt=""
+        />
+        <div className="text-4xl text-center">sneas</div>
+      </header>
+      <div className="flex-1">
+        <div className="mx-auto max-w-screen-lg">
+          <main>{children}</main>
+        </div>
       </div>
-    </>
+
+      <footer className="my-6">
+        © {new Date().getFullYear()} &middot;{" "}
+        <a href="https://twitter.com/sneasio">Dmytro Snisarenko</a>
+      </footer>
+    </div>
   )
 }
 
