@@ -1,4 +1,12 @@
 import * as React from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
+import {
+  faGithub,
+  faLinkedin,
+  faXTwitter,
+  faStackOverflow,
+} from "@fortawesome/free-brands-svg-icons"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -24,14 +32,55 @@ const links = [
   },
 ]
 
+const socialLinks = [
+  {
+    icon: faGithub,
+    url: "https://github.com/sneas",
+  },
+  {
+    icon: faLinkedin,
+    url: "https://linkedin.com/in/sneas",
+  },
+  {
+    icon: faXTwitter,
+    url: "https://twitter.com/sneasio",
+  },
+  {
+    icon: faStackOverflow,
+    url: "https://stackoverflow.com/users/379949/sneas",
+  },
+]
+
 const IndexPage = () => (
   <Layout>
-    <p className="text-center">
+    <div className="text-center my-6">
       Software engineer fond of all the aspects of web development: front-end,
       back-end, DevOps, and QA. Founder of Vocably - the best flashcards app for
       language learning. Maintainer of several open-source projects.
-    </p>
-    <h1 className="text-4xl text-center my-6">
+    </div>
+    <div className="my-6 flex items-center justify-center gap-4">
+      {socialLinks.map(({ icon, url }) => (
+        <a
+          href={url}
+          className="text-gray-400 hover:text-inherit transition-colors duration-300"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <FontAwesomeIcon icon={icon} size="2x" />
+        </a>
+      ))}
+    </div>
+    <div className="my-6 text-center">
+      <a
+        href="https://sneas.github.io/cv"
+        className="underline"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Download CV
+      </a>
+    </div>
+    <h1 className="text-4xl text-center mb-6 mt-8">
       Projects I maintain in my spare time.
     </h1>
     <ul className="my-6 grid grid-cols-1 gap-x-6 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
