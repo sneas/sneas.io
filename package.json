@@ -12,7 +12,7 @@
     "clean": "gatsby clean",
     "deploy": "gh-pages -d public"
   },
-  "dependencies": {
+  "devDependencies": {
     "gatsby": "^5.13.0",
     "gatsby-plugin-image": "^3.13.0",
     "gatsby-plugin-manifest": "^5.13.0",
@@ -20,9 +20,7 @@
     "gatsby-source-filesystem": "^5.13.0",
     "gatsby-transformer-sharp": "^5.13.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "devDependencies": {
+    "react-dom": "^18.2.0",
     "autoprefixer": "^10.4.16",
     "gatsby-plugin-postcss": "^6.13.0",
     "gh-pages": "^6.1.1",
@@ -36,6 +34,6 @@
     "url": "https://github.com/sneas/sneas.io"
   },
   "bugs": {
-    "url": "https://github.com/sneas/sneas.op/issues"
+    "url": "https://github.com/sneas/sneas.io/issues"
   }
 }
