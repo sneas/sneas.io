@@ -13,7 +13,7 @@ const Layout = ({ children }) => {
           className="rounded-full mr-4"
           alt=""
         />
-        <div className="text-4xl text-center font-bold">sneas</div>
+        <div className="text-4xl">sneas</div>
       </header>
       <div className="flex-1">
         <div className="mx-auto max-w-screen-lg">
