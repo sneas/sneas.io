@@ -26,6 +26,11 @@ const links = [
 
 const IndexPage = () => (
   <Layout>
+    <p className="text-center">
+      Software engineer fond of all the aspects of web development: front-end,
+      back-end, DevOps, and QA. Founder of Vocably - the best flashcards app for
+      language learning. Maintainer of several open-source projects.
+    </p>
     <h1 className="text-4xl text-center my-6">
       Projects I maintain in my spare time.
     </h1>
