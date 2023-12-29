@@ -7,6 +7,7 @@ import {
   faXTwitter,
   faStackOverflow,
   faChrome,
+  faDev,
 } from "@fortawesome/free-brands-svg-icons"
 
 import { faEarth } from "@fortawesome/free-solid-svg-icons"
@@ -97,6 +98,10 @@ const socialLinks = [
     icon: faStackOverflow,
     url: "https://stackoverflow.com/users/379949/sneas",
   },
+  {
+    icon: faDev,
+    url: "https://dev.to/sneas",
+  },
 ]
 
 const IndexPage = () => (
@@ -135,9 +140,9 @@ const IndexPage = () => (
       </div>
     </div>
     <h1 className="text-4xl mb-6 mt-8">Projects I use and maintain</h1>
-    <ul className="my-6 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-3 -mx-4">
+    <ul className="columns-1 md:columns-2 lg:columns-3 -mx-4">
       {links.map(({ title, url, description, urlIcon, urlTitle }) => (
-        <li>
+        <li className="break-inside-avoid-column">
           <a
             href={url}
             target="_blank"
