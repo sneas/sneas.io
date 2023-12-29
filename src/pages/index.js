@@ -71,6 +71,13 @@ const links = [
     description:
       "An extension that politely blocks websites that you don't want to visit. It lets you to temporarily unblock them if you want to.",
   },
+  {
+    title: "ionic-native-http-connection-backend",
+    url: "https://github.com/sneas/ionic-native-http-connection-backend",
+    urlIcon: faGithub,
+    urlTitle: `GitHub`,
+    description: "A solution to a CORS issue in Ionic.",
+  },
 ]
 
 const socialLinks = [
@@ -122,7 +129,7 @@ const IndexPage = () => (
       </a>
     </div>
     <h1 className="text-4xl text-center mb-6 mt-8">
-      Projects I maintain in my spare time.
+      Projects I use and maintain.
     </h1>
     <ul className="my-6 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
       {links.map(({ title, url, description, urlIcon, urlTitle }) => (
