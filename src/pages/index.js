@@ -109,10 +109,11 @@ const IndexPage = () => (
     <div className="grid grid-cols-12 gap-6 my-6 items-center">
       <div className="col-span-12 md:col-span-8 lg:col-span-9">
         <div className="text-2xl text-gray-600">
-          Freelance software engineer fond of all the aspects of web
-          development: front-end, back-end, DevOps, and QA. Founder of Vocably -
-          the best flashcards app for language learning. Maintainer of several
-          open-source projects.
+          Hello! I'm a Freelance Software Engineer with a love for every aspect
+          of web development. Such as front-end, back-end, DevOps, and QA. My
+          journey has led me to building Vocably, a language learning platform,
+          and contributing to the open-source world. Here, I share projects I
+          love and maintain in my spare time.
         </div>
       </div>
       <div className="col-span-12 md:col-span-4 lg:col-span-3 md:text-center">
