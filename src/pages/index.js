@@ -107,11 +107,13 @@ const socialLinks = [
 const IndexPage = () => (
   <Layout>
     <div className="grid grid-cols-12 gap-6 my-6 items-center">
-      <div className="col-span-12 md:col-span-8 lg:col-span-9 text-2xl text-gray-600">
-        Freelance software engineer fond of all the aspects of web development:
-        front-end, back-end, DevOps, and QA. Founder of Vocably - the best
-        flashcards app for language learning. Maintainer of several open-source
-        projects.
+      <div className="col-span-12 md:col-span-8 lg:col-span-9">
+        <div className="text-2xl text-gray-600">
+          Freelance software engineer fond of all the aspects of web
+          development: front-end, back-end, DevOps, and QA. Founder of Vocably -
+          the best flashcards app for language learning. Maintainer of several
+          open-source projects.
+        </div>
       </div>
       <div className="col-span-12 md:col-span-4 lg:col-span-3 md:text-center">
         <div className="mb-4 inline-flex items-center justify-center gap-4">
@@ -139,7 +141,7 @@ const IndexPage = () => (
         </div>
       </div>
     </div>
-    <h1 className="text-4xl mb-6 mt-8">Projects I use and maintain</h1>
+    <h2 className="text-4xl mb-6 mt-8">Projects</h2>
     <ul className="columns-1 md:columns-2 lg:columns-3 -mx-4">
       {links.map(({ title, url, description, urlIcon, urlTitle }) => (
         <li className="break-inside-avoid-column">
@@ -167,6 +169,6 @@ const IndexPage = () => (
  *
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
-export const Head = () => <Seo title="Home" />
+export const Head = () => <Seo title="Dima Snisarenko (sneas)" />
 
 export default IndexPage

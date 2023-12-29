@@ -4,16 +4,22 @@ import { StaticImage } from "gatsby-plugin-image"
 const Layout = ({ children }) => {
   return (
     <div className="flex flex-col min-h-screen justify-center max-w-screen-lg px-4 mx-auto">
-      <header className="my-6 flex items-center">
-        <StaticImage
-          src="../images/photo.png"
-          width={64}
-          quality={95}
-          formats={["png", "webp", "avif"]}
-          className="rounded-full mr-4"
-          alt=""
-        />
-        <div className="text-4xl">sneas</div>
+      <header className="my-6">
+        <div className="flex items-center">
+          <a href="/" className="mr-4">
+            <StaticImage
+              role="img"
+              aria-hidden={true}
+              src="../images/photo.png"
+              width={64}
+              quality={95}
+              formats={["png", "webp", "avif"]}
+              className="rounded-full"
+              alt="Photo of Dima Snisarenko"
+            />
+          </a>
+          <h1 className="text-5xl">Dima Snisarenko (sneas)</h1>
+        </div>
       </header>
       <div className="flex-1">
         <div className="mx-auto">
