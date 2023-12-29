@@ -101,37 +101,41 @@ const socialLinks = [
 
 const IndexPage = () => (
   <Layout>
-    <div className="text-center my-6">
-      Software engineer fond of all the aspects of web development: front-end,
-      back-end, DevOps, and QA. Founder of Vocably - the best flashcards app for
-      language learning. Maintainer of several open-source projects.
+    <div className="grid grid-cols-12 gap-6 my-6 items-center">
+      <div className="col-span-12 md:col-span-8 lg:col-span-9 text-2xl text-gray-400">
+        Freelance software engineer fond of all the aspects of web development:
+        front-end, back-end, DevOps, and QA. Founder of Vocably - the best
+        flashcards app for language learning. Maintainer of several open-source
+        projects.
+      </div>
+      <div className="col-span-12 md:col-span-4 lg:col-span-3 md:text-center">
+        <div className="mb-4 inline-flex items-center justify-center gap-4">
+          {socialLinks.map(({ icon, url }) => (
+            <a
+              href={url}
+              className="text-gray-400 hover:text-inherit transition-colors duration-300"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FontAwesomeIcon icon={icon} size="2x" />
+            </a>
+          ))}
+        </div>
+
+        <div className="mb-6">
+          <a
+            href="https://sneas.github.io/cv"
+            className="underline"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Download CV.
+          </a>
+        </div>
+      </div>
     </div>
-    <div className="my-6 flex items-center justify-center gap-4">
-      {socialLinks.map(({ icon, url }) => (
-        <a
-          href={url}
-          className="text-gray-400 hover:text-inherit transition-colors duration-300"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FontAwesomeIcon icon={icon} size="2x" />
-        </a>
-      ))}
-    </div>
-    <div className="my-6 text-center">
-      <a
-        href="https://sneas.github.io/cv"
-        className="underline"
-        target="_blank"
-        rel="noreferrer"
-      >
-        Download CV.
-      </a>
-    </div>
-    <h1 className="text-4xl text-center mb-6 mt-8">
-      Projects I use and maintain.
-    </h1>
-    <ul className="my-6 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+    <h1 className="text-4xl mb-6 mt-8">Projects I use and maintain</h1>
+    <ul className="my-6 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-3 -mx-4">
       {links.map(({ title, url, description, urlIcon, urlTitle }) => (
         <li>
           <a

@@ -3,8 +3,8 @@ import { StaticImage } from "gatsby-plugin-image"
 
 const Layout = ({ children }) => {
   return (
-    <div className="flex flex-col min-h-screen items-center justify-center">
-      <header className="my-6 flex items-center justify-center">
+    <div className="flex flex-col min-h-screen justify-center max-w-screen-lg px-4 mx-auto">
+      <header className="my-6 flex items-center">
         <StaticImage
           src="../images/photo.png"
           width={64}
@@ -16,12 +16,12 @@ const Layout = ({ children }) => {
         <div className="text-4xl">sneas</div>
       </header>
       <div className="flex-1">
-        <div className="mx-auto max-w-screen-lg px-4">
+        <div className="mx-auto">
           <main>{children}</main>
         </div>
       </div>
 
-      <footer className="my-6">
+      <footer className="my-6 text-center">
         © {new Date().getFullYear()} &middot;{" "}
         <a href="https://twitter.com/sneasio">Dmytro Snisarenko</a>
       </footer>
