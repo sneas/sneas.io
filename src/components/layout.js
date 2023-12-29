@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
         <div className="text-4xl">sneas</div>
       </header>
       <div className="flex-1">
-        <div className="mx-auto max-w-screen-lg">
+        <div className="mx-auto max-w-screen-lg px-4">
           <main>{children}</main>
         </div>
       </div>
