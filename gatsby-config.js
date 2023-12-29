@@ -28,9 +28,19 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: "gatsby-plugin-html-attributes",
+      resolve: `gatsby-plugin-html-attributes`,
       options: {
-        lang: "en",
+        lang: `en`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `sneas.io`,
+        short_name: `sneas.io`,
+        start_url: `/`,
+        display: `minimal-ui`,
+        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
   ],
