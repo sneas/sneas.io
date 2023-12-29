@@ -107,7 +107,7 @@ const socialLinks = [
 const IndexPage = () => (
   <Layout>
     <div className="grid grid-cols-12 gap-6 my-6 items-center">
-      <div className="col-span-12 md:col-span-8 lg:col-span-9 text-2xl text-gray-400">
+      <div className="col-span-12 md:col-span-8 lg:col-span-9 text-2xl text-gray-600">
         Freelance software engineer fond of all the aspects of web development:
         front-end, back-end, DevOps, and QA. Founder of Vocably - the best
         flashcards app for language learning. Maintainer of several open-source
@@ -118,7 +118,7 @@ const IndexPage = () => (
           {socialLinks.map(({ icon, url }) => (
             <a
               href={url}
-              className="text-gray-400 hover:text-inherit transition-colors duration-300"
+              className="text-gray-600 hover:text-inherit transition-colors duration-300"
               target="_blank"
               rel="noreferrer"
             >
@@ -149,9 +149,9 @@ const IndexPage = () => (
             rel="noreferrer"
             className="group p-4 block hover:bg-gray-50 transition-colors duration-300 rounded-xl"
           >
-            <div className="font-bold mb-4">{title}</div>
-            <div className="text-gray-500 mb-4">{description}</div>
-            <div className="text-gray-500 text-sm">
+            <div className="mb-4 text-2xl">{title}</div>
+            <div className="text-gray-600 mb-4">{description}</div>
+            <div className="text-gray-600 text-sm">
               <FontAwesomeIcon icon={urlIcon} />{" "}
               <span className="group-hover:underline">{urlTitle}</span>
             </div>
