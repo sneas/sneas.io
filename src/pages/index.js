@@ -15,9 +15,19 @@ import { faEarth } from "@fortawesome/free-solid-svg-icons"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
+import vocablyImage from "./projects/vocably.png"
+import imgComparisonSliderImage from "./projects/img-comparison-slider.png"
+import cvTemplateImage from "./projects/cv-template.png"
+import sensusImage from "./projects/sensus.png"
+import hermesImage from "./projects/hermes.png"
+import pontisImage from "./projects/pontis.png"
+import greenBlockerImage from "./projects/green-blocker.png"
+import ionicNativeHttpConnectionBackendImage from "./projects/ionic-native-http-connection-backend.png"
+
 const links = [
   {
     title: "Vocably - language learning app",
+    image: vocablyImage,
     url: "https://vocably.pro",
     urlIcon: faEarth,
     urlTitle: `Project page`,
@@ -26,6 +36,7 @@ const links = [
   },
   {
     title: "img-comparison-slider",
+    image: imgComparisonSliderImage,
     url: "https://img-comparison-slider.sneas.io",
     urlIcon: faEarth,
     urlTitle: `Component page`,
@@ -34,6 +45,7 @@ const links = [
   },
   {
     title: "cv-template",
+    image: cvTemplateImage,
     url: "https://github.com/sneas/cv-template",
     urlIcon: faGithub,
     urlTitle: `GitHub`,
@@ -42,6 +54,7 @@ const links = [
   },
   {
     title: "Sensus",
+    image: sensusImage,
     url: "https://chromewebstore.google.com/detail/sensus-ai-sensor-for-your/eeeacchbfimdlomgbdfchlpghjlcmeod",
     urlIcon: faChrome,
     urlTitle: `Chrome Extension`,
@@ -50,6 +63,7 @@ const links = [
   },
   {
     title: "hermes",
+    image: hermesImage,
     url: "https://github.com/vocably/hermes",
     urlIcon: faGithub,
     urlTitle: `GitHub`,
@@ -58,6 +72,7 @@ const links = [
   },
   {
     title: "pontis",
+    image: pontisImage,
     url: "https://github.com/vocably/pontis",
     urlIcon: faGithub,
     urlTitle: `GitHub`,
@@ -66,6 +81,7 @@ const links = [
   },
   {
     title: "Green Blocker",
+    image: greenBlockerImage,
     url: "https://chromewebstore.google.com/detail/green-blocker/bddacdohgmaebklmbambdhpopdkadkdg",
     urlIcon: faChrome,
     urlTitle: `Chrome Extension`,
@@ -74,6 +90,7 @@ const links = [
   },
   {
     title: "ionic-native-http-connection-backend",
+    image: ionicNativeHttpConnectionBackendImage,
     url: "https://github.com/sneas/ionic-native-http-connection-backend",
     urlIcon: faGithub,
     urlTitle: `GitHub`,
@@ -143,20 +160,24 @@ const IndexPage = () => (
       </div>
     </div>
     <h2 className="text-4xl mb-6 mt-8">Projects</h2>
-    <ul className="columns-1 md:columns-2 lg:columns-3 -mx-4">
-      {links.map(({ title, url, description, urlIcon, urlTitle }) => (
-        <li className="break-inside-avoid-column">
+    <ul className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+      {links.map(({ title, url, description, urlIcon, urlTitle, image }) => (
+        <li>
           <a
             href={url}
             target="_blank"
             rel="noreferrer"
-            className="group p-4 block hover:bg-gray-50 transition-colors duration-300 rounded-xl"
+            className="group block rounded overflow-hidden border-solid border border-gray-200 hover:bg-gray-50 transition-colors duration-300"
           >
-            <div className="mb-4 text-2xl">{title}</div>
-            <div className="text-gray-600 mb-4">{description}</div>
-            <div className="text-gray-600 text-sm">
-              <FontAwesomeIcon icon={urlIcon} />{" "}
-              <span className="group-hover:underline">{urlTitle}</span>
+            <img className="w-full" src={image} alt="Sunset in the mountains" />
+            <div className="px-6 py-4">
+              <div className="font-bold text-xl mb-2 group-hover:underline">
+                {title}
+              </div>
+              <p className="text-gray-700 text-base">{description}</p>
+            </div>
+            <div className="px-6 pt-4 pb-4">
+              <FontAwesomeIcon icon={urlIcon} /> <span>{urlTitle}</span>
             </div>
           </a>
         </li>
