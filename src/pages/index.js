@@ -26,13 +26,13 @@ import ionicNativeHttpConnectionBackendImage from "./projects/ionic-native-http-
 
 const links = [
   {
-    title: "Vocably - language learning app",
+    title: "Vocably – language learning platform",
     image: vocablyImage,
     url: "https://vocably.pro",
     urlIcon: faEarth,
     urlTitle: `Project page`,
     description:
-      "Language learning and browser extension for discovering and memorizing words and phrases with spaced repetition.",
+      "Language learning app and browser extension for discovering and memorizing words and phrases with spaced repetition.",
   },
   {
     title: "img-comparison-slider",
@@ -159,7 +159,7 @@ const IndexPage = () => (
         </div>
       </div>
     </div>
-    <h2 className="text-4xl mb-6 mt-8">Projects</h2>
+    <h2 className="text-4xl mb-6 mt-8">My Projects</h2>
     <ul className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
       {links.map(({ title, url, description, urlIcon, urlTitle, image }) => (
         <li>
@@ -167,7 +167,7 @@ const IndexPage = () => (
             href={url}
             target="_blank"
             rel="noreferrer"
-            className="group block rounded overflow-hidden border-solid border border-gray-200 hover:bg-gray-50 transition-colors duration-300"
+            className="group block rounded overflow-hidden shadow-5 hover:shadow-6 transition-shadow duration-300"
           >
             <img className="w-full" src={image} alt="Sunset in the mountains" />
             <div className="px-6 py-4">
