@@ -167,7 +167,7 @@ const IndexPage = () => (
             href={url}
             target="_blank"
             rel="noreferrer"
-            className="group block rounded overflow-hidden shadow-5 hover:shadow-6 transition-shadow duration-300"
+            className="h-full group flex flex-col rounded overflow-hidden shadow-5 hover:shadow-6 transition-shadow duration-300"
           >
             <img className="w-full" src={image} alt="Sunset in the mountains" />
             <div className="px-6 py-4">
@@ -176,7 +176,7 @@ const IndexPage = () => (
               </div>
               <p className="text-gray-700 text-base">{description}</p>
             </div>
-            <div className="px-6 pt-4 pb-4">
+            <div className="px-6 pt-4 pb-5 mt-auto">
               <FontAwesomeIcon icon={urlIcon} /> <span>{urlTitle}</span>
             </div>
           </a>
