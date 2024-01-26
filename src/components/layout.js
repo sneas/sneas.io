@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
               alt="Photo of Dima Snisarenko"
             />
           </a>
-          <h1 className="text-5xl">Dima Snisarenko (sneas)</h1>
+          <h1 className="text-5xl">Dimah Snisarenko (sneas)</h1>
         </div>
       </header>
       <div className="flex-1">
