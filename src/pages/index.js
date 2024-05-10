@@ -126,9 +126,15 @@ const IndexPage = () => (
     <div className="grid grid-cols-12 gap-6 my-6 items-center">
       <div className="col-span-12 md:col-span-8 lg:col-span-9">
         <div className="text-2xl text-gray-600">
-          Hello! I'm a Freelance Software Engineer with a love for every aspect
-          of web development. Such as front-end, back-end, DevOps, and QA. I
-          also love open-sourcing my code.
+          <div className="pb-4">
+            Freelance software engineer fond of every aspect of web development.
+            Such as front-end, back-end, DevOps, and QA. I'm into trying things
+            and open-sourcing my code.
+          </div>
+          <div>
+            Some of my projects get a bit of public recognition, and some of
+            them don't. But I love them all.
+          </div>
         </div>
       </div>
       <div className="col-span-12 md:col-span-4 lg:col-span-3 md:text-center">
@@ -157,7 +163,7 @@ const IndexPage = () => (
         </div>
       </div>
     </div>
-    <h2 className="text-4xl mb-6 mt-8">My Projects</h2>
+    <h2 className="text-4xl mb-6 mt-8">Some of my projects</h2>
     <ul className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
       {links.map(({ title, url, description, urlIcon, urlTitle, image }) => (
         <li>
