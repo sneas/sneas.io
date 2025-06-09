@@ -32,6 +32,7 @@
     defer
     src="https://cdn.jsdelivr.net/npm/@sneas/telephone@1/pixel-9-pro.js"
   ></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@sneas/x-ray@3/dist/index.js"></script>
 </head>
 <body>
   <h1>Dimah Snisarenko (sneas)</h1>
@@ -45,57 +46,62 @@
   <h2>Some of my projects</h2>
   <h3><a href="https://getvocably.com" target="_blank">Vocably</a></h3>
   <p>
-    A cross-platform language-learning tool (the best one, of course).
+    The cross-platform language-learning tool that is focused on experienced language users.
   </p>
   <p style="max-width: 400px;">
     <img src="./vocably.png" alt="Vocably" width="100%" />
   </p>
   <h3><a href="https://img-comparison-slider.sneas.io" target="_blank">Image comparison slider</a></h3>
-  <p>An accessible Web Component for comparing images.</p>
+  <p>An accessible web component for comparing images.</p>
+  <p>Try it ↓</p>
   <p style="max-width: 600px;">
-    <img-comparison-slider class="d-block">
+    <img-comparison-slider class="d-block" onfocus="document.getElementById('slider-hint').style.opacity = 1;" onblur="document.getElementById('slider-hint').style.opacity = 0;">
       <img slot="first" src="./img-comparison-slider/morning.webp" width="100%" alt="First image example" />
       <img slot="second" src="./img-comparison-slider/morning-blurred.webp" width="100%" alt="Second image example" />
     </img-comparison-slider>
+    <div id="slider-hint" style="opacity: 0; transition: opacity 0.5s ease-in-out;">Use &#8592; and &#8594; on your keyboard.</div>
   </p>
   <h3><a href="https://sneas.github.io/telephone/" target="_blank">Telephone</a></h3>
+  <p>A web component that draws a mobile device frame around any HTML.</p>
   <p>It's a pity this project doesn't get much recognition.</p>
-  <p>Look how cool it is: <a href="https://vocably.pro" target="_blank">https://vocably.pro</a></p>
-  <style>
-    .phone-content {
-      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-      background-size: 400% 400%;
-      animation: gradient 5s ease infinite;
-      height: 100%;
+  <x-ray>
+    <code>
+      <style>
+        .phone-content {
+          background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+          background-size: 400% 400%;
+          animation: gradient 2s ease infinite;
+          height: 100%;
 
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      align-items: center;
-      justify-content: center;
-      padding: 1rem;
-      color: #fff;
-      box-sizing: border-box;
-    }
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          align-items: center;
+          justify-content: center;
+          padding: 1rem;
+          color: #fff;
+          box-sizing: border-box;
+        }
 
-    @keyframes gradient {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
-    }
-  </style>
-  <iphone-16-max mode="dark">
-    <div class="phone-content">
-      A Web Component<br>to showcase an iOS or Android app on your website.
-    </div>
-  </iphone-16-max>
-
+        @keyframes gradient {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+      </style>
+      <iphone-16-max mode="dark">
+        <div class="phone-content">
+          Any HTML goes here.
+        </div>
+      </iphone-16-max>
+    </code>
+  </x-ray>
   <h3><a href="https://sneas.github.io/cv-template/" target="_blank">CV template</a></h3>
   <p>Treat your CV like a web app:</p>
   <ul>
