@@ -65,6 +65,9 @@
 
     nav { display: flex; gap: 1rem; font-size: 0.9rem; }
     a { color: var(--link); text-decoration: none; border-bottom: 1px solid var(--border); transition: border-color 0.2s; }
+
+    a.unstyled { border-bottom: none; }
+
     a:hover { border-color: var(--link); }
 
     section { margin-bottom: 4rem; }
@@ -135,18 +138,21 @@
       <div class="project">
         <a href="https://vocably.pro" class="project-title">Vocably</a>
         <div class="project-desc">
-          <p>A language-learning ecosystem for A2+ users.</p>
+          <p>A cross-platform AI-powered dictionary and learning system.</p>
           <p>Translate any word -> Save -> Study on mobile</p>
         </div>
         <div class="widget-container" style="text-align: center;">
-          <img src="./vocably/popup.svg" alt="Popup screenshot" style="width: 100%; filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.25))" />
+          <img src="./vocably/popup.svg" alt="Popup screenshot" style="width: 90%; filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.25))" />
           <img style="width: 100%;" src="./vocably/text.svg" alt="Selected text example" />
         </div>
       </div>
 
       <div class="project">
         <a href="https://img-comparison-slider.sneas.io" class="project-title">Image comparison slider</a>
-        <p class="project-desc">Accessible web component for comparing images.</p>
+        <div class="project-desc">
+          <p>The best image comparison slider on the market <a href="https://www.jsdelivr.com/package/npm/img-comparison-slider" class="unstyled"><img src="https://img.shields.io/jsdelivr/npm/hm/img-comparison-slider?style=flat-square&color=blue&label=jsDelivr" alt ="jsDelivr badge" style="vertical-align: middle; margin-top: -4px;" /></a></p>
+          <p>Accessible, mobile friend, and compatible with any JS framework.</p>
+        </div>
         <div class="widget-container">
           <img-comparison-slider class="d-block" onfocus="document.getElementById('slider-hint').style.opacity = 1;" onblur="document.getElementById('slider-hint').style.opacity = 0;">
             <img slot="first" src="./img-comparison-slider/morning.webp" width="100%" alt="First image example" />
