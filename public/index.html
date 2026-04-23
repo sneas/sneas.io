@@ -58,7 +58,6 @@
       max-width: 480px;
       padding: 4rem 1.5rem;
       width: 100%;
-      overflow-x: hidden;
     }
 
     header {
@@ -66,9 +65,17 @@
     }
 
     h1 {
-      font-size: 2rem;
-      font-weight: 400;
+      font-size: 2.5rem;
+      font-weight: 200;
       margin-bottom: 0.5rem;
+
+      &.with-photo {
+        margin-left: -3.5rem;
+
+        @media (width <= 700px) {
+          margin-left: 0;
+        }
+      }
     }
 
     .meta {
@@ -222,7 +229,7 @@
 <body>
 <main>
   <header>
-    <h1 style="display: flex; align-items: center; gap: 0.5rem;"><img src="photo.png" alt="Photo" style="height: 3rem;border-radius: 50%;" /><span>Dimah Sneas</span></h1>
+    <h1 style="display: flex; align-items: center; gap: 0.5rem;" class="with-photo"><img src="photo.png" alt="Photo" style="width: 3rem;border-radius: 50%;" /><span>Dimah Sneas</span></h1>
     <p class="meta">No one calls me the seeker<br/>
       Still, I been searchin low and high<br/>
       I won't get to get what I'm after<br/>
@@ -241,7 +248,7 @@
       <h2><a href="https://vocably.pro" class="project-title"><img src="vocably/logo.svg" style="height: 1.5rem;" alt="Vocably" /></a></h2>
       <div class="project-desc">
         <p>A cross-platform AI-powered dictionary and learning system.</p>
-        <p>Translate any word -> Save -> Study everywhere</p>
+        <p>Translate any word or phrase 🪄✨ Learn it.</p>
       </div>
       <div class="widget-container" style="text-align: center;">
         <img src="./vocably/popup.svg" alt="Popup screenshot"
