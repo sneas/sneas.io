@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="956ab16f-22c6-468f-9714-a013525f4b16"></script>
   <meta charSet="utf-8"/>
   <meta http-equiv="x-ua-compatible" content="ie=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
@@ -60,23 +61,72 @@
       overflow-x: hidden;
     }
 
-    header { margin-bottom: 3rem; }
-    h1 { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; }
-    .meta { color: var(--secondary); font-size: 0.9rem; margin-bottom: 1rem; }
+    header {
+      margin-bottom: 3rem;
+    }
 
-    nav { display: flex; gap: 1rem; font-size: 0.9rem; }
-    a { color: var(--link); text-decoration: none; border-bottom: 1px solid var(--border); transition: border-color 0.2s; }
+    h1 {
+      font-size: 2rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+    }
 
-    a.unstyled { border-bottom: none; }
+    .meta {
+      color: var(--secondary);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
 
-    a:hover { border-color: var(--link); }
+    nav {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
 
-    section { margin-bottom: 4rem; }
-    h2 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--secondary); margin-bottom: 2rem; padding-bottom: 0.5rem; }
+    a {
+      color: var(--link);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      transition: border-color 0.2s;
+    }
 
-    .project { margin-bottom: 3.5rem; }
-    .project-title { font-weight: 600; display: block; margin-bottom: 0.25rem; }
-    .project-desc { font-size: 0.95rem; color: var(--secondary); margin-bottom: 1rem; }
+    a.unstyled {
+      border-bottom: none;
+    }
+
+    a:hover {
+      border-color: var(--link);
+    }
+
+    section {
+      margin-bottom: 4rem;
+    }
+
+    .h2 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--secondary);
+      margin-bottom: 2rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .project {
+      margin-bottom: 3.5rem;
+    }
+
+    .project-title {
+      font-weight: 600;
+      font-size: 1.5rem;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .project-desc {
+      font-size: 0.95rem;
+      color: var(--secondary);
+      margin-bottom: 1rem;
+    }
 
     /* Widget Styles */
     .widget-container {
@@ -96,7 +146,11 @@
         outline: 2px solid var(--link);
       }
     }
-    img-comparison-slider img { width: 100%; display: block; }
+
+    img-comparison-slider img {
+      width: 100%;
+      display: block;
+    }
 
     iphone-16-max {
       max-width: 200px;
@@ -119,120 +173,196 @@
         --widget-bg: #111111;
       }
     }
+
+    .cta-platforms {
+      list-style: none;
+      display: flex;
+      padding: 0;
+      gap: 4px;
+      justify-content: center;
+
+      & a {
+        display: block;
+        width: 1.5rem;
+        text-align: center;
+        color: #333;
+        border: none;
+
+        & img {
+          filter: brightness(1) grayscale(1);
+          width: 100%;
+          transition: all 0.3s ease-in-out;
+
+          &.chrome-image {
+            filter: brightness(1) grayscale(1) !important;
+          }
+
+          &.android-image {
+            filter: brightness(0.7) grayscale(1) !important;
+          }
+        }
+
+        & span {
+          display: none;
+        }
+
+        &:hover {
+          & img {
+            filter: brightness(1) grayscale(0) !important;
+          }
+        }
+      }
+
+      .ios {
+        margin-top: -2px;
+      }
+    }
   </style>
 </head>
 <body>
-  <main>
-    <header>
-      <h1>Dimah Sneas</h1>
-      <p class="meta">No one calls me the seeker<br />
-        Still, I been searchin low and high<br />
-        I won't get to get what I'm after<br />
-        Till the day I die</p>
-      <nav>
-        <a href="https://github.com/sneas">GitHub</a>
-        <a href="https://www.linkedin.com/in/sneas">LinkedIn</a>
-<!--        <a href="https://sneas.github.io/cv">CV</a>-->
-      </nav>
-    </header>
+<main>
+  <header>
+    <h1 style="display: flex; align-items: center; gap: 0.5rem;"><img src="photo.png" alt="Photo" style="height: 3rem;border-radius: 50%;" /><span>Dimah Sneas</span></h1>
+    <p class="meta">No one calls me the seeker<br/>
+      Still, I been searchin low and high<br/>
+      I won't get to get what I'm after<br/>
+      Till the day I die</p>
+    <nav>
+      <a href="https://github.com/sneas">GitHub</a>
+      <a href="https://www.linkedin.com/in/sneas">LinkedIn</a>
+      <!--        <a href="https://sneas.github.io/cv">CV</a>-->
+    </nav>
+  </header>
 
-    <section>
-      <h2>Some of my projects</h2>
+  <section>
+    <div class="h2">Some of my projects</div>
 
-      <div class="project">
-        <a href="https://vocably.pro" class="project-title">Vocably</a>
-        <div class="project-desc">
-          <p>A cross-platform AI-powered dictionary and learning system.</p>
-          <p>Translate any word -> Save -> Study on mobile</p>
-        </div>
-        <div class="widget-container" style="text-align: center;">
-          <img src="./vocably/popup.svg" alt="Popup screenshot" style="width: 90%; filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.25))" />
-          <img style="width: 100%;" src="./vocably/text.svg" alt="Selected text example" />
+    <div class="project">
+      <h2><a href="https://vocably.pro" class="project-title"><img src="vocably/logo.svg" style="height: 1.5rem;" alt="Vocably" /></a></h2>
+      <div class="project-desc">
+        <p>A cross-platform AI-powered dictionary and learning system.</p>
+        <p>Translate any word -> Save -> Study everywhere</p>
+      </div>
+      <div class="widget-container" style="text-align: center;">
+        <img src="./vocably/popup.svg" alt="Popup screenshot"
+             style="width: 90%; filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.25))"/>
+        <img style="width: 100%;" src="./vocably/text.svg" alt="Selected text example"/>
+      </div>
+      <ul
+        class="cta-platforms list-unstyled d-inline-flex align-items-start justify-content-center gap-2 align-middle m-0">
+
+        <li class="ios"><a href="https://apps.apple.com/app/vocably-pro-language-cards/id1641258757" target="_blank"
+                        data-umami-event="CTA Click" data-umami-event-label="iOS App"><img src="icons/apple.svg"
+                                                                                           alt="Apple Logo">
+          <span>iOS</span></a></li>
+
+        <li class="android"><a href="https://play.google.com/store/apps/details?id=com.vocablypro"
+                        target="_blank" data-umami-event="CTA Click" data-umami-event-label="Android App"><img
+          src="icons/android.svg" alt="Android Logo" class="android-image"><span>Android</span></a></li>
+
+        <li class="chrome"><a href="https://chrome.google.com/webstore/detail/vocably/baocigmmhhdemijfjnjdidbkfgpgogmb"
+                        target="_blank" data-umami-event="CTA Click" data-umami-event-label="Chrome"><img
+          src="icons/chrome.svg" alt="Chrome Logo" class="chrome-image"><span>Chrome</span></a></li>
+
+        <li class=""><a href="https://apps.apple.com/app/id6464076425" target="_blank" data-umami-event="CTA Click"
+                        data-umami-event-label="Safari Extension"><img src="icons/safari.svg" alt="Safari Logo"><span>Safari</span></a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <h2><a href="https://img-comparison-slider.sneas.io" class="project-title">
+        <img src="img-comparison-slider/logo.svg" style="height: 1.5rem;" alt="img-comparison-slider" />
+      </a></h2>
+      <div class="project-desc">
+        <p>The best image comparison slider on the market <a
+          href="https://www.jsdelivr.com/package/npm/img-comparison-slider" class="unstyled"><img
+          src="https://img.shields.io/jsdelivr/npm/hm/img-comparison-slider?style=flat-square&color=blue&label=jsDelivr"
+          alt="jsDelivr badge" style="vertical-align: middle; margin-top: -4px;"/></a></p>
+        <p>Accessible, mobile-friendly, and compatible with any JS framework.</p>
+      </div>
+      <div class="widget-container">
+        <img-comparison-slider class="d-block" onfocus="document.getElementById('slider-hint').style.opacity = 1;"
+                               onblur="document.getElementById('slider-hint').style.opacity = 0;">
+          <img slot="first" src="./img-comparison-slider/morning.webp" width="100%" alt="First image example"/>
+          <img slot="second" src="./img-comparison-slider/morning-blurred.webp" width="100%"
+               alt="Second image example"/>
+        </img-comparison-slider>
+        <div id="slider-hint" style="opacity: 0; transition: opacity 0.5s ease-in-out; text-align: center;">Use &#8592; and &#8594; on your
+          keyboard.
         </div>
       </div>
+    </div>
 
-      <div class="project">
-        <a href="https://img-comparison-slider.sneas.io" class="project-title">Image comparison slider</a>
-        <div class="project-desc">
-          <p>The best image comparison slider on the market <a href="https://www.jsdelivr.com/package/npm/img-comparison-slider" class="unstyled"><img src="https://img.shields.io/jsdelivr/npm/hm/img-comparison-slider?style=flat-square&color=blue&label=jsDelivr" alt ="jsDelivr badge" style="vertical-align: middle; margin-top: -4px;" /></a></p>
-          <p>Accessible, mobile-friendly, and compatible with any JS framework.</p>
-        </div>
-        <div class="widget-container">
-          <img-comparison-slider class="d-block" onfocus="document.getElementById('slider-hint').style.opacity = 1;" onblur="document.getElementById('slider-hint').style.opacity = 0;">
-            <img slot="first" src="./img-comparison-slider/morning.webp" width="100%" alt="First image example" />
-            <img slot="second" src="./img-comparison-slider/morning-blurred.webp" width="100%" alt="Second image example" />
-          </img-comparison-slider>
-          <div id="slider-hint" style="opacity: 0; transition: opacity 0.5s ease-in-out;">Use &#8592; and &#8594; on your keyboard.</div>
-        </div>
-      </div>
+    <div class="project">
+      <h2><a href="https://sneas.github.io/telephone/" class="project-title">Telephone</a></h2>
+      <p class="project-desc">Mobile device frame web component.</p>
+      <div class="widget-container">
+        <x-ray>
+          <code>
+            <style>
+              .phone-content {
+                background: linear-gradient(
+                  -45deg,
+                  #ee7752,
+                  #e73c7e,
+                  #23a6d5,
+                  #23d5ab
+                );
+                background-size: 400% 400%;
+                animation: gradient 2s ease infinite;
+                height: 100%;
 
-      <div class="project">
-        <a href="https://sneas.github.io/telephone/" class="project-title">Telephone</a>
-        <p class="project-desc">Mobile device frame web component.</p>
-        <div class="widget-container">
-          <x-ray>
-            <code>
-              <style>
-                .phone-content {
-                  background: linear-gradient(
-                    -45deg,
-                    #ee7752,
-                    #e73c7e,
-                    #23a6d5,
-                    #23d5ab
-                  );
-                  background-size: 400% 400%;
-                  animation: gradient 2s ease infinite;
-                  height: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+                justify-content: center;
+                padding: 1rem;
+                color: #fff;
+                box-sizing: border-box;
+              }
 
-                  display: flex;
-                  flex-direction: column;
-                  gap: 1rem;
-                  align-items: center;
-                  justify-content: center;
-                  padding: 1rem;
-                  color: #fff;
-                  box-sizing: border-box;
+              @keyframes gradient {
+                0% {
+                  background-position: 0% 50%;
                 }
-
-                @keyframes gradient {
-                  0% {
-                    background-position: 0% 50%;
-                  }
-                  50% {
-                    background-position: 100% 50%;
-                  }
-                  100% {
-                    background-position: 0% 50%;
-                  }
+                50% {
+                  background-position: 100% 50%;
                 }
-              </style>
-              <iphone-16-max mode="dark">
-                <div class="phone-content">
-                  Any HTML goes here.
-                </div>
-              </iphone-16-max>
-            </code>
-          </x-ray>
-        </div>
+                100% {
+                  background-position: 0% 50%;
+                }
+              }
+            </style>
+            <iphone-16-max mode="dark">
+              <div class="phone-content">
+                Any HTML goes here.
+              </div>
+            </iphone-16-max>
+          </code>
+        </x-ray>
+      </div>
+    </div>
+
+    <div class="project">
+      <h2><a href="https://sneas.github.io/cv-template/" class="project-title">CV template</a></h2>
+      <div class="project-desc">
+        <p>Automated CI/CD for web and PDF resumes.</p>
+        <ul>
+          <li>Keep it on GitHub</li>
+          <li>Automatically update HTML and PDF when the code is changed</li>
+        </ul>
       </div>
 
-      <div class="project">
-        <a href="https://sneas.github.io/cv-template/" class="project-title">CV template</a>
-        <div class="project-desc">
-          <p>Automated CI/CD for web and PDF resumes.</p>
-          <ul>
-            <li>Keep it on GitHub</li>
-            <li>Automatically update HTML and PDF when the code is changed</li>
-          </ul>
-        </div>
+    </div>
+  </section>
 
-      </div>
-    </section>
-
-    <footer>
-      © This year (<script>document.write(new Date().getFullYear())</script>)
-    </footer>
-  </main>
+  <footer>
+    © This year (
+    <script>document.write(new Date().getFullYear())</script>
+    )
+  </footer>
+</main>
 </body>
 </html>
