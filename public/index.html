@@ -97,17 +97,22 @@
 
     a {
       color: var(--link);
+      text-decoration: underline 0.5px;
+      text-underline-offset: 2px;
+    }
+
+    a.project-title {
       text-decoration: none;
       border-bottom: 1px solid var(--border);
       transition: border-color 0.2s;
+
+      &:hover {
+        border-color: var(--link);
+      }
     }
 
     a.unstyled {
       border-bottom: none;
-    }
-
-    a:hover {
-      border-color: var(--link);
     }
 
     section {
@@ -278,7 +283,7 @@
       </a></h2>
       <div class="project-desc">
         <p>The best image comparison slider on the market <a
-          href="https://www.jsdelivr.com/package/npm/img-comparison-slider" class="unstyled"><img
+          href="https://www.jsdelivr.com/package/npm/img-comparison-slider"><img
           src="https://img.shields.io/jsdelivr/npm/hm/img-comparison-slider?style=flat-square&color=blue&label=jsDelivr"
           alt="jsDelivr badge" style="vertical-align: middle; margin-top: -4px;"/></a></p>
         <p>Accessible, mobile-friendly, and compatible with any JS framework.</p>
@@ -296,12 +301,36 @@
       </div>
     </div>
 
+    <style>
+      .phone-content {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        color: #fff;
+        box-sizing: border-box;
+        font-weight: 100;
+
+        a {
+          color: inherit;
+          line-height: 1.2;
+          display: inline-block;
+          background-color: #23a6d5;
+          text-decoration: none;
+          padding: 0.5rem 1rem;
+          border-radius: 1rem;
+          font-weight: 200;
+        }
+      }
+    </style>
     <div class="project">
-      <h2><a href="https://github.com/sneas/telephone/" class="project-title">Telephone</a></h2>
+      <h2><a href="https://sneas.github.io/telephone" class="project-title">Telephone</a></h2>
       <p class="project-desc">Mobile device frame web component.</p>
       <div class="widget-container">
         <x-ray>
-          <code>
+          <code style="font: inherit;">
             <style>
               .phone-content {
                 background: linear-gradient(
@@ -314,15 +343,6 @@
                 background-size: 400% 400%;
                 animation: gradient 2s ease infinite;
                 height: 100%;
-
-                display: flex;
-                flex-direction: column;
-                gap: 1rem;
-                align-items: center;
-                justify-content: center;
-                padding: 1rem;
-                color: #fff;
-                box-sizing: border-box;
               }
 
               @keyframes gradient {
@@ -339,7 +359,8 @@
             </style>
             <iphone-16-max mode="dark">
               <div class="phone-content">
-                Any HTML goes here.
+                <p>This is &lt;html&gt; with a background animated with CSS.</p>
+                <a class="button" href="https://sneas.github.io/telephone">View homepage</a>
               </div>
             </iphone-16-max>
           </code>
