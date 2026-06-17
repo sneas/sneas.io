@@ -221,6 +221,28 @@
       }
     }
   </style>
+  <script>
+    document.addEventListener('click', function (e) {
+      // Ensure the umami tracker is loaded on the window
+      if (typeof window.umami === 'undefined') return;
+
+      // Find the closest clickable target element (buttons, links, or inputs)
+      const target = e.target.closest('a, button, input[type="submit"], input[type="button"]');
+
+      if (target) {
+        // Determine a clean identifier for the element
+        const elementText = target.innerText?.trim() || target.value || target.id || 'Unnamed Element';
+        const elementType = target.tagName.toLowerCase();
+
+        // Send the custom event to Umami
+        window.umami.track(`Click: ${elementText}`, {
+          element_type: elementType,
+          element_id: target.id || 'none',
+          url: window.location.pathname
+        });
+      }
+    });
+  </script>
 </head>
 <body>
 <main>
@@ -234,7 +256,6 @@
       <a href="https://github.com/sneas">GitHub</a>
       <a href="https://www.linkedin.com/in/sneas">LinkedIn</a>
       <a href="only-fans.html" rel="nofollow">OnlyFans</a>
-      <!--        <a href="https://sneas.github.io/cv">CV</a>-->
     </nav>
   </header>
 
