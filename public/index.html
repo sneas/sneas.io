@@ -41,7 +41,6 @@
       --secondary: #666666;
       --border: #eeeeee;
       --link: #000000;
-      --widget-bg: #f9f9f9;
     }
 
     body {
@@ -147,8 +146,6 @@
 
     /* Widget Styles */
     .widget-container {
-      background: var(--widget-bg);
-      border-radius: 8px;
       padding: 1rem;
       margin: 1rem 0;
       overflow: hidden;
@@ -317,11 +314,20 @@
           color: inherit;
           line-height: 1.2;
           display: inline-block;
-          background-color: #333333;
+          background-color: #0050ff;
           text-decoration: none;
-          padding: 0.5rem 2rem;
-          border-radius: 1rem;
+          padding: 0.3rem 3rem;
+          border-radius: 3rem;
           font-weight: 200;
+          transition: background-color 0.5s;
+
+          &:hover {
+            background-color: #013de4;
+          }
+
+          &:active {
+            background-color: #001f78;
+          }
         }
       }
     </style>
@@ -359,7 +365,7 @@
             </style>
             <iphone-16-max mode="dark">
               <div class="phone-content">
-                <p>This is &lt;html&gt; with a background animated with CSS.</p>
+                <p>This is &lt;html&gt; with CSS animation on the background.</p>
                 <a class="button" href="https://sneas.github.io/telephone">View</a>
               </div>
             </iphone-16-max>
