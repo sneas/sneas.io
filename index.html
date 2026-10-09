@@ -5,21 +5,21 @@
   <meta charSet="utf-8"/>
   <meta http-equiv="x-ua-compatible" content="ie=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-  <meta name="description" content="Frontend developer who loves backend, DeOps, and QA." data-gatsby-head="true"/>
+  <meta name="description" content="Frontend developer who loves backend, DevOps, and QA." data-gatsby-head="true"/>
   <meta property="og:title" content="Dima Snisarenko (sneas)" data-gatsby-head="true"/>
-  <meta property="og:description" content="Frontend developer who loves backend, DeOps, and QA."
+  <meta property="og:description" content="Frontend developer who loves backend, DevOps, and QA."
         data-gatsby-head="true"/>
   <meta property="og:type" content="website" data-gatsby-head="true"/>
   <meta name="twitter:card" content="summary" data-gatsby-head="true"/>
   <meta name="twitter:creator" content="sneas" data-gatsby-head="true"/>
   <meta name="twitter:title" content="Dima Sneas" data-gatsby-head="true"/>
-  <meta name="twitter:description" content="Frontend developer who loves backend, DeOps, and QA."
+  <meta name="twitter:description" content="Frontend developer who loves backend, DevOps, and QA."
         data-gatsby-head="true"/>
   <link rel="icon" href="./favicon-32x32.png" type="image/png"/>
   <title data-gatsby-head="true">Dima Sneas</title>
   <script defer src="https://cdn.jsdelivr.net/npm/@sneas/x-ray@3/dist/index.js"></script>
   <script
-    defers
+    defer
     src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"
   ></script>
   <link
@@ -34,130 +34,239 @@
     defer
     src="https://cdn.jsdelivr.net/npm/@sneas/telephone@1/pixel-9-pro.js"
   ></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"/>
   <style>
     :root {
-      --bg: #ffffff;
-      --text: #1a1a1a;
-      --secondary: #666666;
-      --border: #eeeeee;
-      --link: #000000;
+      --bg: #fafafa;
+      --surface: #ffffff;
+      --muted-surface: #f4f4f5;
+      --text: #18181b;
+      --secondary: #52525b;
+      --tertiary: #a1a1aa;
+      --border: #e4e4e7;
+      --link: #18181b;
+      --accent: #2563eb;
+      --radius: 14px;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 16px rgba(0, 0, 0, 0.04);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       line-height: 1.6;
       color: var(--text);
       background: var(--bg);
       margin: 0;
       display: flex;
       justify-content: center;
+      -webkit-font-smoothing: antialiased;
     }
 
     main {
-      max-width: 480px;
-      padding: 4rem 1.5rem;
+      max-width: 640px;
+      padding: 5rem 1.5rem 3rem;
       width: 100%;
 
       @media (width <= 700px) {
         overflow: hidden;
-        padding-top: 1rem;
+        padding-top: 2.5rem;
+        padding-inline: 1rem;
       }
     }
 
-    header {
-      margin-bottom: 3rem;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      font-weight: 200;
-      margin-bottom: 0.5rem;
-
-      &.with-photo {
-        margin-left: -3.5rem;
-
-        @media (width <= 700px) {
-          margin-left: 0;
-        }
-      }
-    }
-
-    .meta {
-      color: var(--secondary);
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
-    }
-
-    nav {
-      display: flex;
-      gap: 1rem;
-      font-size: 0.9rem;
+    p {
+      margin: 0 0 0.75rem;
     }
 
     a {
       color: var(--link);
-      text-decoration: underline 0.5px;
-      text-underline-offset: 2px;
-    }
-
-    a.project-title {
-      text-decoration: none;
-      border-bottom: 1px solid var(--border);
-      transition: border-color 0.2s;
+      text-decoration: underline 1px;
+      text-decoration-color: var(--tertiary);
+      text-underline-offset: 3px;
+      transition: text-decoration-color 0.2s, color 0.2s;
 
       &:hover {
-        border-color: var(--link);
+        text-decoration-color: currentColor;
       }
     }
 
-    a.unstyled {
-      border-bottom: none;
+    /* Header */
+    header {
+      margin-bottom: 4rem;
     }
 
+    .intro {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .avatar {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      object-fit: cover;
+      box-shadow: 0 0 0 3px var(--surface), 0 0 0 4px var(--border);
+    }
+
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin: 0;
+    }
+
+    .role {
+      color: var(--secondary);
+      font-size: 1.05rem;
+      margin: 0.25rem 0 0;
+    }
+
+    .meta {
+      color: var(--secondary);
+      font-size: 0.95rem;
+      font-style: italic;
+      margin: 0 0 1.75rem;
+      padding-left: 1rem;
+      border-left: 2px solid var(--border);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+
+      & a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        padding: 0.45rem 0.95rem;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: var(--surface);
+        text-decoration: none;
+        transition: border-color 0.2s, background-color 0.2s;
+
+        &:hover {
+          border-color: var(--text);
+        }
+
+        &.primary {
+          background: var(--text);
+          border-color: var(--text);
+          color: #fff;
+
+          &:hover {
+            background: #3f3f46;
+          }
+        }
+      }
+    }
+
+    /* Sections */
     section {
       margin-bottom: 4rem;
     }
 
     .h2 {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
+      font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--secondary);
-      margin-bottom: 2rem;
-      padding-bottom: 0.5rem;
+      letter-spacing: 0.12em;
+      color: var(--tertiary);
+      margin-bottom: 1.5rem;
     }
 
     .project {
-      margin-bottom: 3.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+
+      @media (width <= 700px) {
+        padding: 1.25rem;
+      }
+
+      & h2 {
+        margin: 0 0 0.75rem;
+        line-height: 1;
+      }
     }
 
-    .project-title {
+    a.project-title {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.35rem;
       font-weight: 600;
-      font-size: 1.5rem;
-      display: block;
-      margin-bottom: 0.25rem;
+      letter-spacing: -0.02em;
+      text-decoration: none;
+      min-height: 2.5rem;
+
+      & img {
+        display: block;
+      }
+
+      &::after {
+        content: "↗";
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--tertiary);
+        transition: transform 0.2s, color 0.2s;
+      }
+
+      &:hover::after {
+        color: var(--text);
+        transform: translate(2px, -2px);
+      }
     }
 
     .project-desc {
       font-size: 0.95rem;
       color: var(--secondary);
-      margin-bottom: 1rem;
+      margin-bottom: 1.25rem;
+
+      & p:last-child {
+        margin-bottom: 0;
+      }
     }
 
     /* Widget Styles */
     .widget-container {
-      padding: 1rem;
-      margin: 1rem 0;
+      display: block;
+      background: var(--muted-surface);
+      border-radius: calc(var(--radius) - 4px);
+      padding: 1.5rem;
+      margin: 0;
       overflow: hidden;
+      text-decoration: none;
+
+      @media (width <= 700px) {
+        padding: 1rem;
+      }
     }
 
     img-comparison-slider {
       outline: none;
       width: 100%;
-      border-radius: 4px;
+      border-radius: 8px;
+      overflow: hidden;
 
       &:focus {
-        outline: 2px solid var(--link);
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
       }
     }
 
@@ -166,14 +275,154 @@
       display: block;
     }
 
+    #slider-hint {
+      font-size: 0.8rem;
+      color: var(--secondary);
+      margin-top: 0.75rem;
+    }
+
     iphone-16-max {
       max-width: 200px;
     }
 
-    footer {
-      margin-top: 4rem;
-      font-size: 0.8rem;
+    x-ray {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      & .x-ray__code-previewer {
+        align-self: stretch;
+        margin-top: 1.25rem;
+      }
+
+      & .x-ray__toggle {
+        display: inline-block;
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--secondary);
+        padding: 0.25rem 0;
+        text-decoration: none;
+
+        &:hover {
+          color: var(--text);
+        }
+      }
+
+      & .x-ray__code {
+        margin: 0.75rem 0 0;
+        padding: 1rem 1.25rem;
+        border-radius: 8px;
+        font-size: 0.8rem;
+        line-height: 1.55;
+        overflow-x: auto;
+      }
+    }
+
+    .steps {
+      margin: 0 0 1.25rem;
+      padding-left: 1.25rem;
       color: var(--secondary);
+      font-size: 0.95rem;
+
+      & li {
+        margin-bottom: 0.35rem;
+        padding-left: 0.25rem;
+      }
+
+      & li::marker {
+        color: var(--tertiary);
+        font-weight: 600;
+      }
+    }
+
+    .text-link {
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .hire {
+      display: flex;
+      justify-content: center;
+      margin: 3rem 0 1rem;
+    }
+
+    a.upwork-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.9rem;
+      padding: 0.85rem 1.25rem 0.85rem 0.85rem;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #27272a 0%, #09090b 100%);
+      color: #fff;
+      text-decoration: none;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 1px 2px rgba(0, 0, 0, 0.2), 0 8px 24px -6px rgba(0, 0, 0, 0.4);
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 2px 4px rgba(0, 0, 0, 0.2), 0 14px 32px -8px rgba(0, 0, 0, 0.5);
+
+        & .upwork-button__arrow {
+          transform: translateX(3px);
+        }
+      }
+
+      &:active {
+        transform: translateY(0);
+        background: #000;
+      }
+
+      &:focus-visible {
+        outline: 2px solid #18181b;
+        outline-offset: 3px;
+      }
+    }
+
+    .upwork-button__icon {
+      display: grid;
+      place-items: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      background: #14a800;
+      color: #fff;
+      flex-shrink: 0;
+
+      & svg {
+        transform: translateY(2px);
+      }
+    }
+
+    .upwork-button__text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.25;
+      text-align: left;
+    }
+
+    .upwork-button__label {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .upwork-button__sub {
+      font-size: 0.78rem;
+      opacity: 0.85;
+    }
+
+    .upwork-button__arrow {
+      font-size: 1.15rem;
+      margin-left: 0.25rem;
+      transition: transform 0.2s;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--tertiary);
       text-align: center;
     }
 
@@ -181,19 +430,28 @@
       list-style: none;
       display: flex;
       padding: 0;
-      gap: 4px;
+      margin: 1.25rem 0 0;
+      gap: 0.5rem;
       justify-content: center;
+      flex-wrap: wrap;
 
       & a {
-        display: block;
-        width: 1.5rem;
-        text-align: center;
-        color: #333;
-        border: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.35rem 0.75rem;
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: var(--secondary);
+        text-decoration: none;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        transition: border-color 0.2s, color 0.2s;
 
         & img {
           filter: brightness(1) grayscale(1);
-          width: 100%;
+          width: 1rem;
+          height: 1rem;
           transition: all 0.3s ease-in-out;
 
           &.chrome-image {
@@ -205,19 +463,14 @@
           }
         }
 
-        & span {
-          display: none;
-        }
-
         &:hover {
+          color: var(--text);
+          border-color: var(--text);
+
           & img {
             filter: brightness(1) grayscale(0) !important;
           }
         }
-      }
-
-      .ios {
-        margin-top: -2px;
       }
     }
   </style>
@@ -247,7 +500,13 @@
 <body>
 <main>
   <header>
-    <h1 style="display: flex; align-items: center; gap: 0.5rem;" class="with-photo"><img src="photo.png" alt="Photo" style="width: 3rem;border-radius: 50%;" /><span>Dima Sneas</span></h1>
+    <div class="intro">
+      <img src="photo.png" alt="Dima Sneas" class="avatar"/>
+      <div>
+        <h1>Dima Sneas</h1>
+        <p class="role">Full-stack developer</p>
+      </div>
+    </div>
     <p class="meta">No one calls me the seeker<br/>
       Still, I been searchin low and high<br/>
       I won't get to get what I'm after<br/>
@@ -255,7 +514,7 @@
     <nav>
       <a href="https://github.com/sneas">GitHub</a>
       <a href="https://www.linkedin.com/in/sneas">LinkedIn</a>
-      <a href="https://sneas.github.io/cv/dima-sneas.full-stack-developer.pdf">CV</a>
+      <a href="https://sneas.github.io/cv/dima-sneas.full-stack-developer.pdf" class="primary">Download CV</a>
     </nav>
   </header>
 
@@ -263,33 +522,31 @@
     <div class="h2">Some of my projects</div>
 
     <div class="project">
-      <h2><a href="https://vocably.pro" class="project-title"><img src="vocably/logo.svg" style="height: 1.5rem;" alt="Vocably" /></a></h2>
+      <h2><a href="https://vocably.pro" class="project-title"><img src="vocably/logo.svg" style="height: 1.5rem;" alt="Vocably"/></a></h2>
       <div class="project-desc">
         <p>A cross-platform AI-powered dictionary and learning system.</p>
         <p>Translate any word or phrase 🪄✨ Learn it.</p>
       </div>
-      <a href="https://vocably.pro" class="widget-container" style="text-align: center; display: block; border: none;">
+      <a href="https://vocably.pro" class="widget-container" style="text-align: center;">
         <img src="./vocably/popup.svg" alt="Popup screenshot"
              style="width: 90%; filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.25))"/>
         <img style="width: 100%;" src="./vocably/text.svg" alt="Selected text example"/>
       </a>
-      <ul
-        class="cta-platforms list-unstyled d-inline-flex align-items-start justify-content-center gap-2 align-middle m-0">
-
-        <li class="ios"><a href="https://apps.apple.com/app/vocably-pro-language-cards/id1641258757" target="_blank"
+      <ul class="cta-platforms">
+        <li><a href="https://apps.apple.com/app/vocably-pro-language-cards/id1641258757" target="_blank"
                         data-umami-event="CTA Click" data-umami-event-label="iOS App"><img src="icons/apple.svg"
                                                                                            alt="Apple Logo">
           <span>iOS</span></a></li>
 
-        <li class="android"><a href="https://play.google.com/store/apps/details?id=com.vocablypro"
+        <li><a href="https://play.google.com/store/apps/details?id=com.vocablypro"
                         target="_blank" data-umami-event="CTA Click" data-umami-event-label="Android App"><img
           src="icons/android.svg" alt="Android Logo" class="android-image"><span>Android</span></a></li>
 
-        <li class="chrome"><a href="https://chrome.google.com/webstore/detail/vocably/baocigmmhhdemijfjnjdidbkfgpgogmb"
+        <li><a href="https://chrome.google.com/webstore/detail/vocably/baocigmmhhdemijfjnjdidbkfgpgogmb"
                         target="_blank" data-umami-event="CTA Click" data-umami-event-label="Chrome"><img
           src="icons/chrome.svg" alt="Chrome Logo" class="chrome-image"><span>Chrome</span></a></li>
 
-        <li class=""><a href="https://apps.apple.com/app/id6464076425" target="_blank" data-umami-event="CTA Click"
+        <li><a href="https://apps.apple.com/app/id6464076425" target="_blank" data-umami-event="CTA Click"
                         data-umami-event-label="Safari Extension"><img src="icons/safari.svg" alt="Safari Logo"><span>Safari</span></a>
         </li>
       </ul>
@@ -297,7 +554,7 @@
 
     <div class="project">
       <h2><a href="https://img-comparison-slider.sneas.io" class="project-title">
-        <img src="img-comparison-slider/logo.svg" style="height: 1.5rem;" alt="img-comparison-slider" />
+        <img src="img-comparison-slider/logo.svg" style="height: 1.5rem;" alt="img-comparison-slider"/>
       </a></h2>
       <div class="project-desc">
         <p>The best image comparison slider on the market <a
@@ -353,7 +610,7 @@
       }
     </style>
     <div class="project">
-      <h2><a href="https://sneas.github.io/telephone" class="project-title"><img src="telephone.svg" style="height: 2.5rem;" alt="Telephone" /></a></h2>
+      <h2><a href="https://sneas.github.io/telephone" class="project-title"><img src="telephone.svg" style="height: 2.25rem;" alt="Telephone"/></a></h2>
       <p class="project-desc">Mobile device frame web component.</p>
       <div class="widget-container">
         <x-ray>
@@ -397,29 +654,31 @@
 
     <div class="project">
       <h2><a href="https://github.com/sneas/cv-template" class="project-title">CV template</a></h2>
-      <div class="widget-container">
-        <p>If you are a developer, you can have your CV as a code on GitHub.</p>
-        <ol>
-          <li>Update your CV as an HTML file</li>
-          <li>Commit and Push</li>
-          <li>GitHub Actions automatically generates and deploys Web and PDF versions to GitHub Pages</li>
-        </ol>
-
-        <div style="text-align: center;"><a href="https://sneas.github.io/cv" target="_blank">Here is my CV as an example.</a></div>
-      </div>
+      <p class="project-desc">If you are a developer, you can keep your CV as code on GitHub.</p>
+      <ol class="steps">
+        <li>Update your CV as an HTML file</li>
+        <li>Commit and push</li>
+        <li>GitHub Actions automatically generates and deploys Web and PDF versions to GitHub Pages</li>
+      </ol>
+      <a href="https://sneas.github.io/cv" target="_blank" class="text-link">See my CV as an example →</a>
     </div>
   </section>
 
-  <div style="margin-top: 2rem; text-align: center">
-
-    <div id=r><style>@import"https://use.typekit.net/kmj5qkr.css";:root{--h:polygon(50% 0,100% 24%,100% 76%,50% 100%,0 76%,0 24%)}.h{display:inline-block;background:#25a9ef;padding:6px;clip-path:var(--h)}.a{width:200px;padding:24px 0 40px;display:flex;flex-direction:column;align-items:center;gap:8px;color:#204ecf;text-align:center;background:radial-gradient(circle at 20% -10%,#00c3ff -80%,#fff 30%),radial-gradient(circle at -20% 20%,#00c3ff -80%,#fff 30%),radial-gradient(circle at 70% 100%,#00c3ff -80%,#fff 30%),radial-gradient(circle at 120% 80%,#00c3ff -80%,#fff 30%);background-blend-mode:multiply;clip-path:var(--h);box-shadow:0 28px 50px rgba(6,30,96,.35)}#r{font-family:proxima-nova,Arial,sans-serif}.b{margin:0;font-size:19px;font-weight:700;line-height:1}.c{width:120px;height:1px;background:#25a9ef}.d{font-size:16px;margin-bottom:-6px}.f{display:inline-flex;align-items:center;justify-content:center;padding:4px 20px;border-radius:6px;background:#296bff;color:#fff;font-size:16px;font-weight:500;text-decoration-thickness:.5px;text-underline-offset:2px}</style><div class=h><div class=a><svg width=64 viewBox="0 0 60 17" xmlns="http://www.w3.org/2000/svg"><path d="m20.85 6.38 6.06-.89 2.72-5.49 2.71 5.49 6.06.89-4.39 4.28 1.04 6.03-5.42-2.85-5.43 2.85 1.04-6.03zm33.06 7.17 1.85-.27.82-1.67.83 1.67 1.84.27-1.33 1.31.31 1.83-1.65-.87-1.66.87.32-1.83zm-3.38-3.01-3.61-.52-1.61-3.26-1.62 3.26-3.6.52 2.6 2.55-.61 3.59 3.23-1.69 3.21 1.69-.61-3.59zm-45.19 3.01-1.85-.27-.82-1.67-.83 1.67-1.84.27 1.33 1.31-.31 1.83 1.65-.87 1.65.87-.31-1.83zm3.38-3.01 3.61-.52 1.61-3.26 1.61 3.26 3.61.52-2.6 2.55.61 3.59-3.23-1.69-3.22 1.69.62-3.59z" fill="#00c3ff"/></svg><h3 class=b>TOP 3% TALENT</h3><div class=c></div><span class=d>Vetted by</span><svg style="width:100px;" viewBox="0 0 108 30" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.11 0L14.82 6.7C14.87 6.75 14.91 6.8 14.97 6.85L20.82 12.7L11.31 22.16L15.66 26.52L12.75 29.41L6.09 22.75C6.01 22.68 5.93 22.6 5.85 22.52L0 16.68L9.48 7.25L5.16 2.94L8.11 0ZM12.36 10.5C12.27 10.48 12.18 10.48 12.1 10.5C12.01 10.53 11.94 10.57 11.78 10.72L6.37 16.11C6.21 16.27 6.17 16.34 6.15 16.42C6.12 16.51 6.12 16.6 6.15 16.68C6.17 16.77 6.22 16.85 6.37 17L8.09 18.72C8.24 18.87 8.31 18.91 8.4 18.94C8.49 18.96 8.57 18.96 8.66 18.94C8.75 18.91 8.82 18.87 8.97 18.72L14.38 13.33C14.54 13.18 14.58 13.1 14.61 13.02C14.63 12.93 14.63 12.85 14.61 12.76C14.59 12.67 14.54 12.6 14.39 12.45L12.67 10.73C12.52 10.57 12.44 10.53 12.36 10.5Z" fill="#204ecf"/><path fill-rule="evenodd" clip-rule="evenodd" d="M62.65 7.76C64.76 7.76 66.56 8.58 67.99 10.16C69.45 11.69 70.18 13.8 70.17 16.42C70.17 18.98 69.42 21.22 67.93 22.8C66.46 24.37 64.59 25.17 62.35 25.17C60.42 25.16 58.67 24.47 57.51 23.28L57.35 23.11L57.34 29.86L53.52 29.85V29.57L53.56 7.96L57.36 7.96L57.35 10.6C58.6 9.19 60.61 7.76 62.65 7.76ZM87.1 7.82C89.28 7.82 90.78 8.31 91.94 9.26C93.05 10.18 93.64 11.82 93.69 13.55L93.69 13.81L93.67 24.95H89.8L89.8 24.49C89.8 24.01 89.8 23.52 89.8 23.02C88.68 24.57 87.12 25.32 85.04 25.32C83.39 25.32 81.99 24.82 80.97 23.9C79.94 22.95 79.39 21.66 79.39 20.16C79.41 17.33 81.41 15.37 84.91 14.76L85.18 14.71L89.82 13.98V13.61C89.82 12.83 89.59 11.89 89.13 11.5C88.66 11.1 88.09 10.77 87.1 10.77C84.37 10.77 83.81 12.78 83.78 13.79L83.78 13.88L80.36 13.92C80.36 12.43 81.05 10.5 82.44 9.29C83.56 8.32 85.19 7.87 86.77 7.82L87.07 7.82H87.1ZM72.12 3.46L75.93 3.46L75.92 8.02L79.45 8.02L79.45 11.2L75.91 11.19L75.9 19.73C75.9 20.67 76.09 21.29 76.5 21.58C76.93 21.88 77.8 21.6 77.8 21.6L78.14 24.92C78.14 24.92 76.94 25.23 76.18 25.23C75.19 25.23 74.34 24.98 73.69 24.48C72.63 23.68 72.09 22.28 72.09 20.31L72.11 11.19L68.92 8L72.12 8.01L72.12 3.46ZM49.66 10.26C50.76 11.39 52.07 13.4 52.06 16.52C52.05 19.63 50.74 21.63 49.65 22.76C48.15 24.3 46.11 25.18 44.06 25.18C43.98 25.18 43.9 25.18 43.81 25.17C41.62 25.16 39.68 24.38 38.06 22.84C36.43 21.29 35.6 19.16 35.6 16.48C35.6 13.8 36.44 11.66 38.07 10.12C39.69 8.59 41.62 7.82 43.82 7.82C45.99 7.75 48.11 8.65 49.66 10.26ZM40.85 3.22V6.99L33.49 7L33.51 24.97L29.54 24.96V24.62L29.57 6.99H22.06L22.07 3.22H40.85ZM95.53 3.47L98.95 3.48V3.57L98.92 24.95L95.5 24.94V24.84L95.53 3.47ZM89.82 17.05L86.01 17.69C84.15 18.01 83.29 18.73 83.28 19.99C83.27 21.14 84.09 21.91 85.37 21.98L85.53 21.98H85.55C87.99 21.98 89.72 20.08 89.81 17.31L89.82 17.09V17.05ZM43.8 11.21C42.52 11.21 41.41 11.7 40.51 12.68C39.63 13.64 39.18 14.92 39.18 16.49C39.18 18.07 39.63 19.35 40.51 20.31C41.4 21.29 42.51 21.78 43.79 21.79C45.09 21.79 46.21 21.3 47.1 20.32C48 19.34 48.45 18.06 48.46 16.51C48.47 14.95 48.01 13.67 47.11 12.69C46.21 11.71 45.1 11.21 43.8 11.21ZM61.74 11.33H61.72C60.44 11.33 59.38 11.79 58.48 12.76C57.58 13.7 57.13 14.92 57.12 16.39C57.12 17.88 57.57 19.22 58.47 20.2C59.39 21.14 60.45 21.61 61.72 21.61C63.01 21.61 64.1 21.13 64.97 20.2C65.88 19.23 66.32 17.9 66.33 16.41C66.33 14.93 65.87 13.71 64.99 12.78C64.12 11.82 63.03 11.33 61.74 11.33Z" fill="#262d3d"/></svg><a target="_blank" class=f href=https://www.toptal.com/developers/resume/dmytro-snisarenko#qoxw2E>Hire me</a></div></div></div>
-
+  <div class="hire">
+    <a class="upwork-button" href="https://www.upwork.com/freelancers/~01752134695731685e" target="_blank" rel="noopener">
+      <span class="upwork-button__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"/></svg>
+      </span>
+      <span class="upwork-button__text">
+        <span class="upwork-button__label">Hire me at Upwork</span>
+        <span class="upwork-button__sub">Available for freelance projects</span>
+      </span>
+      <span class="upwork-button__arrow" aria-hidden="true">→</span>
+    </a>
   </div>
 
   <footer>
-    © This year (
-    <script>document.write(new Date().getFullYear())</script>
-    )
+    © <script>document.write(new Date().getFullYear())</script> Dima Sneas
   </footer>
 </main>
 </body>
