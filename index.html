@@ -120,7 +120,8 @@
     header {
       position: relative;
       padding-block: 5rem 4.5rem;
-      overflow: hidden;
+      /* Clip the blobs on top and sides only, so they flow down into the first band */
+      clip-path: inset(0 0 -100vh 0);
 
       @media (width <= 700px) {
         padding-block: 2.5rem 3rem;
@@ -387,9 +388,12 @@
     }
 
     .band--vocably {
-      --band: #e4e7ec;
-      --glow-a: #f8f9fb;
-      --glow-b: #c5ccd6;
+      --band: transparent;
+      padding-top: 1rem;
+
+      &::before {
+        content: none;
+      }
     }
 
     .band--slider {
