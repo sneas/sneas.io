@@ -52,6 +52,8 @@
 
       /* Project palette */
       --vocably: #c4b5fd;
+      --lift-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 24px 48px -16px rgba(30, 20, 60, 0.28);
+      --lift-shadow-hover: 0 1px 2px rgba(0, 0, 0, 0.06), 0 32px 60px -18px rgba(30, 20, 60, 0.34);
       --slider: #00b2d2;
       --telephone: #fc2d79;
       --cv: #036e85;
@@ -64,6 +66,7 @@
 
     html {
       scroll-behavior: smooth;
+      overflow-x: clip;
     }
 
     body {
@@ -72,7 +75,7 @@
       color: var(--text);
       background: var(--bg);
       margin: 0;
-      overflow-x: hidden;
+      overflow-x: clip;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -176,6 +179,8 @@
       position: absolute;
       inset: 0;
       pointer-events: none;
+      /* Clip sideways overflow (prevents horizontal page scroll on mobile), but let blobs flow down */
+      overflow-x: clip;
 
       & span {
         position: absolute;
@@ -391,6 +396,13 @@
       --band: transparent;
       padding-top: 1rem;
 
+      /* Nudge the centered text up a little next to the popup */
+      @media (width > 860px) {
+        & .project-text {
+          margin-bottom: 6rem;
+        }
+      }
+
       &::before {
         content: none;
       }
@@ -471,7 +483,7 @@
 
       @media (width > 860px) {
         & .project-text {
-          margin-top: 8.5rem;
+          margin-top: 5rem;
         }
       }
     }
@@ -542,44 +554,43 @@
       }
     }
 
-    /* Widget Styles */
+    /* Widget Styles: no card chrome — the showcased content is the only elevated surface */
     .widget-container {
       display: block;
       position: relative;
-      background: rgba(255, 255, 255, 0.4);
-      border: 1px solid rgba(255, 255, 255, 0.55);
-      backdrop-filter: blur(8px);
-      border-radius: var(--radius);
-      padding: 2rem;
       margin: 0;
-      overflow: hidden;
+      text-align: center;
       text-decoration: none;
       color: var(--fg);
-      box-shadow: 0 30px 60px -25px rgba(0, 0, 0, 0.35);
-      transition: translate 0.4s cubic-bezier(.2, .8, .2, 1), rotate 0.4s cubic-bezier(.2, .8, .2, 1), box-shadow 0.4s;
-
-      @media (width <= 700px) {
-        padding: 1.25rem;
-      }
     }
 
-    a.widget-container:hover,
-    .widget-container.tilt:hover {
-      translate: 0 -6px;
-      rotate: -0.6deg;
-      box-shadow: 0 40px 70px -25px rgba(0, 0, 0, 0.45);
+    .vocably-popup {
+      width: 90%;
+      border-radius: 12px;
+      box-shadow: var(--lift-shadow);
+      transition: translate 0.4s cubic-bezier(.2, .8, .2, 1), box-shadow 0.4s;
     }
 
-    .band--telephone .widget-container {
-      background: rgba(255, 255, 255, 0.18);
-      border-color: rgba(255, 255, 255, 0.35);
+    .vocably-text {
+      /* Paint above the popup so its hover shadow never tints the selection */
+      position: relative;
+      z-index: 1;
+      display: block;
+      width: 100%;
+      margin-top: 0.25rem;
+    }
+
+    a.widget-container:hover .vocably-popup {
+      translate: 0 -4px;
+      box-shadow: var(--lift-shadow-hover);
     }
 
     img-comparison-slider {
       outline: none;
       width: 100%;
-      border-radius: 10px;
+      border-radius: 12px;
       overflow: hidden;
+      box-shadow: var(--lift-shadow);
       --divider-color: #fff;
       --default-handle-color: #fff;
 
@@ -597,13 +608,14 @@
     #slider-hint {
       position: absolute;
       inset-inline: 0;
-      bottom: 0.35rem;
+      top: calc(100% + 0.75rem);
       font-size: 0.75rem;
       color: var(--fg-soft);
     }
 
     iphone-16-max {
       max-width: 200px;
+      filter: drop-shadow(0 24px 32px rgba(60, 0, 30, 0.3));
     }
 
     x-ray {
@@ -635,6 +647,7 @@
       }
 
       & .x-ray__code {
+        text-align: left;
         margin: 0.75rem 0 0;
         padding: 1rem 1.25rem;
         border-radius: 10px;
@@ -951,10 +964,9 @@
           </li>
         </ul>
       </div>
-      <a href="https://vocably.pro" class="widget-container reveal" style="text-align: center; --delay: 0.15s;">
-        <img src="./vocably/popup.svg" alt="Popup screenshot"
-             style="width: 90%; filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.25))"/>
-        <img style="width: 100%;" src="./vocably/text.svg" alt="Selected text example"/>
+      <a href="https://vocably.pro" class="widget-container reveal" style="--delay: 0.15s;">
+        <img class="vocably-popup" src="./vocably/popup.svg" alt="Popup screenshot"/>
+        <img class="vocably-text" src="./vocably/text.svg" alt="Selected text example"/>
       </a>
     </div>
   </section>
@@ -974,7 +986,7 @@
           <p>Accessible, mobile-friendly, and compatible with any JS framework.</p>
         </div>
       </div>
-      <div class="widget-container tilt reveal" style="--delay: 0.15s">
+      <div class="widget-container reveal" style="--delay: 0.15s">
         <img-comparison-slider class="d-block" onfocus="document.getElementById('slider-hint').style.opacity = 1;"
                                onblur="document.getElementById('slider-hint').style.opacity = 0;">
           <img slot="first" src="./img-comparison-slider/morning.webp" width="100%" alt="First image example"/>
