@@ -496,7 +496,21 @@
 
     .project--solo {
       grid-template-columns: minmax(0, 1fr) !important;
-      max-width: 720px;
+
+      & .project-text {
+        max-width: 720px;
+      }
+
+      /* Call-to-action sits in its own column on the right */
+      & > .text-link {
+        order: 3;
+        justify-self: center;
+      }
+
+      @media (width > 860px) {
+        grid-template-columns: minmax(0, 640px) auto !important;
+        justify-content: start;
+      }
     }
 
     .kicker {
@@ -654,47 +668,6 @@
         font-size: 0.8rem;
         line-height: 1.55;
         overflow-x: auto;
-      }
-    }
-
-    .steps {
-      list-style: none;
-      counter-reset: step;
-      margin: 0 0 2rem;
-      padding: 0;
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
-
-      @media (width <= 700px) {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      & li {
-        counter-increment: step;
-        padding: 1.25rem;
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        background: rgba(255, 255, 255, 0.06);
-        color: var(--fg-soft);
-        font-size: 0.95rem;
-        line-height: 1.5;
-        transition: translate 0.3s, background-color 0.3s;
-
-        &::before {
-          content: counter(step, decimal-leading-zero);
-          display: block;
-          font-size: 1.5rem;
-          font-weight: 800;
-          letter-spacing: -0.03em;
-          color: var(--fg);
-          margin-bottom: 0.5rem;
-        }
-
-        &:hover {
-          translate: 0 -4px;
-          background: rgba(255, 255, 255, 0.12);
-        }
       }
     }
 
@@ -927,9 +900,9 @@
       I won't get to get what I'm after<br/>
       Till the day I die</p>
     <nav class="reveal" style="--delay: 0.2s">
-      <a href="https://github.com/sneas">GitHub</a>
-      <a href="https://www.linkedin.com/in/sneas">LinkedIn</a>
-      <a href="https://sneas.github.io/cv/dima-sneas.full-stack-developer.pdf">Download CV</a>
+      <a href="https://github.com/sneas" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/sneas" target="_blank">LinkedIn</a>
+      <a href="https://sneas.github.io/cv/dima-sneas.full-stack-developer.pdf" target="_blank">Download CV</a>
     </nav>
     <a href="#projects" class="scroll-hint reveal" style="--delay: 0.3s">Some of my projects <span>↓</span></a>
   </div>
@@ -940,7 +913,7 @@
     <div class="container project">
       <div class="project-text reveal">
         <div class="kicker">AI dictionary · iOS · Android · Web</div>
-        <h2><a href="https://vocably.pro" class="project-title"><img src="vocably/logo.svg" style="height: 2.25rem;" alt="Vocably"/></a></h2>
+        <h2><a href="https://vocably.pro" target="_blank" class="project-title"><img src="vocably/logo.svg" style="height: 2.25rem;" alt="Vocably"/></a></h2>
         <div class="project-desc">
           <p>A cross-platform AI-powered dictionary and learning system.</p>
           <p><strong>Translate any word or phrase 🪄✨ Learn it.</strong></p>
@@ -964,7 +937,7 @@
           </li>
         </ul>
       </div>
-      <a href="https://vocably.pro" class="widget-container reveal" style="--delay: 0.15s;">
+      <a href="https://vocably.pro" target="_blank" class="widget-container reveal" style="--delay: 0.15s;">
         <img class="vocably-popup" src="./vocably/popup.svg" alt="Popup screenshot"/>
         <img class="vocably-text" src="./vocably/text.svg" alt="Selected text example"/>
       </a>
@@ -975,12 +948,12 @@
     <div class="container project">
       <div class="project-text reveal">
         <div class="kicker">Open-source web component</div>
-        <h2><a href="https://img-comparison-slider.sneas.io" class="project-title">
+        <h2><a href="https://img-comparison-slider.sneas.io" target="_blank" class="project-title">
           <img src="img-comparison-slider/logo.svg" style="height: 1.6rem;" alt="img-comparison-slider"/>
         </a></h2>
         <div class="project-desc">
           <p><strong>The best image comparison slider on the market</strong> <a
-            href="https://www.jsdelivr.com/package/npm/img-comparison-slider"><img
+            href="https://www.jsdelivr.com/package/npm/img-comparison-slider" target="_blank"><img
             src="https://img.shields.io/jsdelivr/npm/hm/img-comparison-slider?style=flat-square&color=111&label=jsDelivr"
             alt="jsDelivr badge" style="vertical-align: middle; margin-top: -4px;"/></a></p>
           <p>Accessible, mobile-friendly, and compatible with any JS framework.</p>
@@ -1037,7 +1010,7 @@
     <div class="container project">
       <div class="project-text reveal">
         <div class="kicker">Open-source web component</div>
-        <h2><a href="https://sneas.github.io/telephone" class="project-title"><img src="telephone.svg" style="height: 3rem;" alt="Telephone"/></a></h2>
+        <h2><a href="https://sneas.github.io/telephone" target="_blank" class="project-title"><img src="telephone.svg" style="height: 3rem;" alt="Telephone"/></a></h2>
         <div class="project-desc">
           <p><strong>Mobile device frame web component.</strong></p>
           <p>Wrap any HTML, CSS and JS and it renders inside a pixel-perfect iPhone, Pixel, iPad or Android tablet frame.</p>
@@ -1075,7 +1048,7 @@
             <iphone-16-max mode="dark">
               <div class="phone-content">
                 <p>This is &lt;html&gt; with CSS animation on the background.</p>
-                <a class="button" href="https://sneas.github.io/telephone">View</a>
+                <a class="button" href="https://sneas.github.io/telephone" target="_blank">View</a>
               </div>
             </iphone-16-max>
           </code>
@@ -1087,16 +1060,17 @@
   <section class="band band--cv">
     <div class="container project project--solo">
       <div class="project-text">
-        <div class="kicker reveal">CV as code</div>
-        <h2 class="reveal"><a href="https://github.com/sneas/cv-template" class="project-title">CV template</a></h2>
-        <p class="project-desc reveal">If you are a developer, you can keep your CV as code on GitHub.</p>
-        <ol class="steps">
-          <li class="reveal">Update your CV as an HTML file</li>
-          <li class="reveal" style="--delay: 0.1s">Commit and push</li>
-          <li class="reveal" style="--delay: 0.2s">GitHub Actions automatically generates and deploys Web and PDF versions to GitHub Pages</li>
-        </ol>
-        <a href="https://sneas.github.io/cv" target="_blank" class="text-link reveal">See my CV as an example →</a>
+        <div class="kicker reveal">There's more where that came from</div>
+        <h2 class="reveal"><a href="https://github.com/sneas" target="_blank" class="project-title">Explore it all on GitHub</a></h2>
+        <div class="project-desc reveal" style="--delay: 0.1s">
+          <p>The full list of my projects is available on my GitHub page — from open&#8209;source components and handy tools to weekend experiments.</p>
+          <p><strong>Come take a look around and star what you like!</strong></p>
+        </div>
       </div>
+      <a href="https://github.com/sneas" target="_blank" rel="noopener" class="text-link reveal" style="--delay: 0.2s">
+        <svg viewBox="0 0 16 16" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        Visit my GitHub →
+      </a>
     </div>
   </section>
 
