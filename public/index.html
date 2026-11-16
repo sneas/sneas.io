@@ -64,6 +64,7 @@
 
     html {
       scroll-behavior: smooth;
+      overflow-x: clip;
     }
 
     body {
@@ -72,7 +73,7 @@
       color: var(--text);
       background: var(--bg);
       margin: 0;
-      overflow-x: hidden;
+      overflow-x: clip;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -176,6 +177,8 @@
       position: absolute;
       inset: 0;
       pointer-events: none;
+      /* Clip sideways overflow (prevents horizontal page scroll on mobile), but let blobs flow down */
+      overflow-x: clip;
 
       & span {
         position: absolute;
