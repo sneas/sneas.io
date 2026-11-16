@@ -507,9 +507,22 @@
         justify-self: center;
       }
 
+      /* Same 5fr / 6fr columns as the telephone band above, so the button
+         lines up with the centre of its "Show code" toggle */
       @media (width > 860px) {
-        grid-template-columns: minmax(0, 640px) auto !important;
-        justify-content: start;
+        grid-template-columns: minmax(0, 5fr) minmax(0, 6fr) !important;
+
+        & .project-text {
+          grid-column: 1 / -1;
+          grid-row: 1;
+          /* Let the text run under the right column, stopping short of the button */
+          max-width: min(640px, calc((100% - 3.5rem) * 8 / 11 + 3.5rem - 8.5rem));
+        }
+
+        & > .text-link {
+          grid-column: 2;
+          grid-row: 1;
+        }
       }
     }
 
