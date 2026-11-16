@@ -565,6 +565,9 @@
     }
 
     .vocably-text {
+      /* Paint above the popup so its hover shadow never tints the selection */
+      position: relative;
+      z-index: 1;
       display: block;
       width: 100%;
       margin-top: 0.25rem;
